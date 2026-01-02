@@ -8,9 +8,14 @@ export default function Navbar() {
   console.log(searchParam);
 
   return (
-    <nav className="flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
+    <nav className="w-full bg-blue-300">
+      <div className="flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
       <h2 className="text-2xl font-semibold">
-        <NavLink to={"/"}>FoodRecipe</NavLink>
+        <NavLink to={"/"} className="group">
+          <span className="text-2xl font-extrabold bg-gradient-to-r from-indigo-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent transition-transform duration-200 group-hover:scale-105">
+            FoodRecipe
+          </span>
+        </NavLink>
       </h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -22,11 +27,11 @@ export default function Navbar() {
           className="bg-white/75 p-3 px-8 rounded-full outline-none lg:w-96 shadow-lg shadow-red-100 focus:shadow-red-200"
         />
       </form>
-      <ul className="flex gap-5">
+        <ul className="flex gap-5 text-black">
         <li>
           <NavLink
             to={"/"}
-            className="text-black hover:text-gray-700 duration-300"
+              className="text-black hover:text-gray-700 duration-300"
           >
             Home
           </NavLink>
@@ -34,12 +39,13 @@ export default function Navbar() {
         <li>
           <NavLink
             to={"/favorites"}
-            className="text-black hover:text-gray-700 duration-300"
+              className="text-black hover:text-gray-700 duration-300"
           >
-            favorites
+            Favorites
           </NavLink>
         </li>
       </ul>
+      </div>
     </nav>
   );
 }
