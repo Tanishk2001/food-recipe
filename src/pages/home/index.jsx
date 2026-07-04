@@ -1,4 +1,4 @@
-import { ChevronDown, Star } from "lucide-react";
+import { Star } from "lucide-react";
 
 export default function Home() {
   return (

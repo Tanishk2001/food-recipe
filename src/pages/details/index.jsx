@@ -25,7 +25,7 @@ export default function Details() {
     }
 
     getRecipeDetails();
-  }, []);
+  }, [id, setRecipeDetailsData]);
 
   console.log(recipeDetailsData, "recipeDetailsData");
 
@@ -35,6 +35,7 @@ export default function Details() {
         <div className="h-96 overflow-hidden rounded-xl group">
           <img
             src={recipeDetailsData?.recipe?.image_url}
+            alt={recipeDetailsData?.recipe?.title || "Recipe image"}
             className="w-full h-full object-cover block group-hover:scale-105 duration-300"
           />
         </div>
@@ -63,11 +64,11 @@ export default function Details() {
             Ingredients:
           </span>
           <ul className="flex flex-col gap-3">
-            {recipeDetailsData?.recipe?.ingredients.map((ingredient) => (
-              <li>
+            {recipeDetailsData?.recipe?.ingredients.map((ingredient, index) => (
+              <li key={index}>
                 <span className="text-2xl font-semibold text-black">
                   {ingredient.quantity} {ingredient.unit}
-                </span>
+                </span>{" "}
                 <span className="text-2xl font-semibold text-black">
                   {ingredient.description}
                 </span>
