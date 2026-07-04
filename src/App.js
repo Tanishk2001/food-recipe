@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import Favorites from "./pages/favorites";
 import Details from "./pages/details";
+import SearchResults from "./pages/search";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/recipe-item/:id" element={<Details />} />
+          <Route path="/search" element={<SearchResults />} />
         </Routes>
       </div>
     </div>
